@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/jeyforcode/convert-numbers-to-words/compare/v0.0.3...v0.0.4) (2024-09-16)
+
+
+### Bug Fixes
+
+* change name package ([89423b8](https://github.com/jeyforcode/convert-numbers-to-words/commit/89423b8aa3f389b0eae795adb72c5eab6394933d))
+* fixing conflict ([cf47edf](https://github.com/jeyforcode/convert-numbers-to-words/commit/cf47edfd05ae97edca74ad4e7487b26787e41c45))
+* remove run release and add publish to npm job ([01781ed](https://github.com/jeyforcode/convert-numbers-to-words/commit/01781edad9f808e4cd6f1939c5b37652a1e2b33f))
+
 ### [0.0.3](https://github.com/jeyforcode/convert-numbers-to-words/compare/v0.0.2...v0.0.3) (2024-09-16)
 
 ### 0.0.2 (2024-09-16)
