@@ -22,6 +22,7 @@ jobs:
             - node_modules
             - package-lock.json
             - package.json
+            - __test__
             - src
             - .eslintrc.js
             - .prettierrc.js
@@ -30,12 +31,13 @@ jobs:
             - .circleci
             - tsconfig.json
             - .husky
+            - jest.config.js
   run_tests:
     executor: node/default
     description: Run tests
     steps:
-      - attach_workspace:
-          at: .
+      - checkout
+      - node/install-packages
       - run:
           name: Run tests
           command: npm run test
@@ -43,8 +45,8 @@ jobs:
     executor: node/default
     description: Build
     steps:
-      - attach_workspace:
-          at: .
+      - checkout
+      - node/install-packages
       - run:
           name: Build
           command: npm run build
