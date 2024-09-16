@@ -35,7 +35,7 @@ describe('Test Correct Inputs', () => {
 
   const testCorrectInputs = [1220, 12200, 122000, 1220000];
   const correctValue: any = {
-    1220: 'Seribu Dua Ratus Dua Puluhh',
+    1220: 'Seribu Dua Ratus Dua Puluh',
     12200: 'Dua Belas Ribu Dua Ratus',
     122000: 'Seratus Dua Puluh Dua Ribu',
     1220000: 'Satu Juta Dua Ratus Dua Puluh Ribu',
