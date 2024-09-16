@@ -1,5 +1,5 @@
 {
-  "name": "jeyforcode_number_to_words",
+  "name": "jeyforcode-number-to-words",
   "version": "0.0.1",
   "description": "Converts numbers into words & currency.",
   "main": "./dist/index.js",
