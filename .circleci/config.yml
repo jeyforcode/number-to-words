@@ -66,6 +66,25 @@ jobs:
           command: |
             npm run release
             git push --follow-tags "https://${GH_TOKEN}@github.com/jeyforcode/number-to-words.git" main
+  publish_to_npm:
+    executor: node/default
+    description: Publish to npm
+    steps:
+      - checkout
+      - node/install-packages
+      - run:
+          name: Check if npm version is the same and publish to npm
+          command: |
+            CURRENT_VERSION=$(npm show jeyforcode-number-to-words version)
+            LOCAL_VERSION=$(node -pe "require('./package.json').version")
+
+            if [ "$CURRENT_VERSION" != "$LOCAL_VERSION" ]; then
+              echo "Versions are different. Publishing to npm."
+              echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+              npm publish
+            else
+              echo "Versions are the same. Skipping npm publish."
+            fi
 workflows:
   build_app:
     jobs:
@@ -76,6 +95,9 @@ workflows:
       - build:
           requires:
             - run_tests
-      - run_release:
-          requires:
-            - build
+      # - publish_to_npm:
+      #    requires:
+      #      - build
+      # - run_release:
+      #    requires:
+      #      - build
